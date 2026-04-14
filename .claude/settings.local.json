@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm test:*)",
+      "Bash(node dist/cli/index.js \"https://www.twitch.tv/videos/123456789\" --start 01:12:30 --end 02:00:00)",
+      "Bash(node dist/cli/index.js \"https://youtube.com/watch?v=abc\" --start 0 --end 60)",
+      "Bash(node dist/cli/index.js --help)"
+    ]
+  }
+}
