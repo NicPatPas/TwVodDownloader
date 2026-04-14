@@ -61,7 +61,7 @@ export async function fetchVodToken(vodId: string): Promise<PlaybackAccessToken>
       login: '',
       isVod: true,
       vodID: vodId,
-      playerType: 'site',
+      playerType: 'embed',
     },
   };
 

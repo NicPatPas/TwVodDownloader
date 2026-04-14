@@ -29,7 +29,23 @@
       "Bash(node dist/cli/index.js \"https://www.twitch.tv/videos/123456789\" -s 00:10:00 -e 00:05:00)",
       "Bash(node dist/cli/index.js \"https://youtube.com/watch?v=abc\" -s 0 -e 60)",
       "Bash(node dist/cli/index.js \"https://www.twitch.tv/videos/123456789\" -s abc -e 60)",
-      "Bash(node dist/cli/index.js \"https://www.twitch.tv/videos/123456789\" -s 00:05:00 -e 00:10:00 -o existing_clip.mp4)"
+      "Bash(node dist/cli/index.js \"https://www.twitch.tv/videos/123456789\" -s 00:05:00 -e 00:10:00 -o existing_clip.mp4)",
+      "Bash(nslookup usher.twitchapps.com)",
+      "Bash(nslookup -type=AAAA usher.twitchapps.com 8.8.8.8)",
+      "Bash(nslookup -type=CNAME usher.twitchapps.com 8.8.8.8)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}  connect: %{time_connect}s  total: %{time_total}s\" --max-time 8 \"https://usher.twitch.tv/\")",
+      "Bash(curl -s -X POST https://gql.twitch.tv/gql -H 'Client-Id: kimne78kx3ncx6brgo4mv6wki5h1ko' -H 'Content-Type: application/json' -d '{:*)",
+      "Bash(curl -s -o /dev/null -w 'HTTP %{http_code}' --max-time 8 https://d3fi1amfgojobc.cloudfront.net/86e8d9ec28fbbcaa9a51_kdrkitten_316782638823_1775986207/chunked/index-dvr.m3u8)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(curl -s \"https://raw.githubusercontent.com/lay295/TwitchDownloader/master/TwitchDownloaderCore/TwitchHelper.cs\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/lay295/TwitchDownloader/master/TwitchDownloaderCore/Tools/M3U8.cs\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/lay295/TwitchDownloader/master/TwitchDownloaderCore/VideoDownloader.cs\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/lay295/TwitchDownloader/master/TwitchDownloaderCore/TwitchObjects/Gql/GqlVideoTokenResponse.cs\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/lay295/TwitchDownloader/master/TwitchDownloaderCore/TwitchObjects/Gql/GqlVideoResponse.cs\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/lay295/TwitchDownloader/master/README.md\")",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}  connect: %{time_connect}s\" --max-time 8 \"https://usher.ttvnw.net/\")",
+      "Bash(node dist/cli/index.js \"https://www.twitch.tv/videos/2746168718\" -s 00:51:00 -e 01:00:00)"
     ]
   }
 }

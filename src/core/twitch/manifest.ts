@@ -13,11 +13,18 @@ function buildUsherUrl(vodId: string, token: string, signature: string): string 
     sig: signature,
     token,
     allow_source: 'true',
-    allow_spectre: 'true',
-    // Twitch may return a lower-res playlist if this is absent
+    allow_audio_only: 'true',
+    include_unavailable: 'true',
+    platform: 'web',
+    player_backend: 'mediaplayer',
+    playlist_include_framerate: 'true',
+    supported_codecs: 'av1,h265,h264',
+    // Random param prevents CDN caching issues
     p: String(Math.floor(Math.random() * 9_999_999)),
   });
-  return `https://usher.twitchapps.com/vod/${vodId}?${params.toString()}`;
+  // usher.ttvnw.net is the active Twitch Usher endpoint.
+  // usher.twitchapps.com (old) and usher.twitch.tv have no DNS records / are unreachable.
+  return `https://usher.ttvnw.net/vod/${vodId}.m3u8?${params.toString()}`;
 }
 
 /**
@@ -29,9 +36,9 @@ async function fetchMasterPlaylist(url: string): Promise<string> {
     res = await fetch(url);
   } catch (err) {
     throw new NetworkError(
-      `Failed to reach Twitch playlist server (usher.twitchapps.com): ` +
+      `Failed to reach Twitch playlist server (usher.ttvnw.net): ` +
         `${err instanceof Error ? err.message : String(err)}. ` +
-        `Check that usher.twitchapps.com is reachable from your network.`
+        `Check that usher.ttvnw.net is reachable from your network.`
     );
   }
 
