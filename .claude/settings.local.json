@@ -20,7 +20,16 @@
       "Bash(nslookup usher.twitch.tv 8.8.8.8)",
       "Bash(nslookup api.twitch.tv 8.8.8.8)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://usher.twitch.tv/vod/2736583531?sig=test&token=test&allow_source=true\")",
-      "Bash(curl -v --max-time 5 \"https://usher.twitch.tv/vod/123?sig=x&token=y\")"
+      "Bash(curl -v --max-time 5 \"https://usher.twitch.tv/vod/123?sig=x&token=y\")",
+      "Bash(node dist/cli/index.js \"https://www.twitch.tv/videos/2736583531\" --start 00:05:00)",
+      "Bash(where ffmpeg:*)",
+      "Bash(ffmpeg -f lavfi -i \"testsrc=duration=10:size=128x72:rate=5\" -c:v libx264 -t 10 -y /tmp/test_source.mp4)",
+      "Bash(ffmpeg -f lavfi -i \"testsrc=duration=10:size=128x72:rate=5\" -c:v libx264 -t 10 -y test_source.mp4)",
+      "Bash(node dist/cli/index.js \"https://www.twitch.tv/videos/123456789\" -s 00:05:00)",
+      "Bash(node dist/cli/index.js \"https://www.twitch.tv/videos/123456789\" -s 00:10:00 -e 00:05:00)",
+      "Bash(node dist/cli/index.js \"https://youtube.com/watch?v=abc\" -s 0 -e 60)",
+      "Bash(node dist/cli/index.js \"https://www.twitch.tv/videos/123456789\" -s abc -e 60)",
+      "Bash(node dist/cli/index.js \"https://www.twitch.tv/videos/123456789\" -s 00:05:00 -e 00:10:00 -o existing_clip.mp4)"
     ]
   }
 }

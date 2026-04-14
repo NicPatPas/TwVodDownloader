@@ -36,3 +36,13 @@ export class PlaylistParseError extends AppError {
     this.name = 'PlaylistParseError';
   }
 }
+
+export class FfmpegError extends AppError {
+  constructor(
+    message: string,
+    public readonly exitCode?: number | null
+  ) {
+    super(message);
+    this.name = 'FfmpegError';
+  }
+}
