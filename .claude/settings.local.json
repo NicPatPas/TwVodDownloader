@@ -7,7 +7,20 @@
       "Bash(npm test:*)",
       "Bash(node dist/cli/index.js \"https://www.twitch.tv/videos/123456789\" --start 01:12:30 --end 02:00:00)",
       "Bash(node dist/cli/index.js \"https://youtube.com/watch?v=abc\" --start 0 --end 60)",
-      "Bash(node dist/cli/index.js --help)"
+      "Bash(node dist/cli/index.js --help)",
+      "Bash(node dist/cli/index.js \"https://www.twitch.tv/videos/2395894016\" --start 00:05:00 --end 00:10:00)",
+      "Bash(curl -s -X POST https://gql.twitch.tv/gql -H 'Client-Id: kimne78kx3ncx6brgo4mv6wki5h1ko' -H 'Content-Type: application/json' -d '{\"operationName\":\"PlaybackAccessToken_Template\",\"query\":\"query PlaybackAccessToken_Template\\($login:String!,$isLive:Boolean!,$vodID:ID!,$isVod:Boolean!,$playerType:String!\\){streamPlaybackAccessToken\\(channelName:$login,params:{platform:\\\\\"web\\\\\",playerBackend:\\\\\"mediaplayer\\\\\",playerType:$playerType}\\)@include\\(if:$isLive\\){value signature __typename}videoPlaybackAccessToken\\(id:$vodID,params:{platform:\\\\\"web\\\\\",playerBackend:\\\\\"mediaplayer\\\\\",playerType:$playerType}\\)@include\\(if:$isVod\\){value signature __typename}}\",\"variables\":{\"isLive\":false,\"login\":\"\",\"isVod\":true,\"vodID\":\"2395894016\",\"playerType\":\"site\"}}')",
+      "Bash(curl -s -X POST https://gql.twitch.tv/gql -H 'Client-Id: kimne78kx3ncx6brgo4mv6wki5h1ko' -H 'Content-Type: application/json' -d '{\"query\":\"{ user\\(login:\\\\\"esl_csgo\\\\\"\\) { videos\\(first:1,type:ARCHIVE\\) { edges { node { id title createdAt } } } } }\"}')",
+      "Bash(curl -s -X POST https://gql.twitch.tv/gql -H 'Client-Id: kimne78kx3ncx6brgo4mv6wki5h1ko' -H 'Content-Type: application/json' -d '{\"query\":\"{ user\\(login:\\\\\"pokimane\\\\\"\\) { videos\\(first:1,type:ARCHIVE\\) { edges { node { id title } } } } }\"}')",
+      "Bash(node dist/cli/index.js \"https://www.twitch.tv/videos/2736583531\" --start 00:05:00 --end 00:10:00)",
+      "Bash(node -e ':*)",
+      "Bash(curl -v \"https://usher.twitchapps.com/vod/123456789\")",
+      "Bash(nslookup usher.twitchapps.com 8.8.8.8)",
+      "Bash(nslookup -type=A usher.twitchapps.com 8.8.8.8)",
+      "Bash(nslookup usher.twitch.tv 8.8.8.8)",
+      "Bash(nslookup api.twitch.tv 8.8.8.8)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://usher.twitch.tv/vod/2736583531?sig=test&token=test&allow_source=true\")",
+      "Bash(curl -v --max-time 5 \"https://usher.twitch.tv/vod/123?sig=x&token=y\")"
     ]
   }
 }

@@ -12,3 +12,27 @@ export class InvalidInputError extends AppError {
     this.name = 'InvalidInputError';
   }
 }
+
+export class NetworkError extends AppError {
+  constructor(
+    message: string,
+    public readonly statusCode?: number
+  ) {
+    super(message);
+    this.name = 'NetworkError';
+  }
+}
+
+export class VodUnavailableError extends AppError {
+  constructor(message: string) {
+    super(message);
+    this.name = 'VodUnavailableError';
+  }
+}
+
+export class PlaylistParseError extends AppError {
+  constructor(message: string) {
+    super(message);
+    this.name = 'PlaylistParseError';
+  }
+}
